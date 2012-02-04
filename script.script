@@ -58,16 +58,16 @@ message_box.sprite.SetOpacity(0);
 message_box.sprite.SetPosition(message_box.x, message_box.y, 10);
 
 message_sprite = Sprite();
-message_sprite.SetPosition(message_box.x + 19, message_box.y + 17, 11);
+message_sprite.SetPosition(message_box.x + 19, message_box.y + 20, 11);
 message_sprite.SetOpacity(0);
 
 fun display_message (text)
 {
   message_box.sprite.SetOpacity(1);
-  my_image = Image.Text(text, 0.75, 0.75, 0.75);
+  my_image = Image.Text(text, 0, 0, 0);
   message_sprite.SetImage(my_image);
-  message_sprite.SetPosition(Window.GetWidth() / 2 - my_image.GetWidth() / 2, message_box.y + 17, 11);
-  message_sprite.SetOpacity(1);
+  message_sprite.SetPosition(Window.GetWidth() / 2 - my_image.GetWidth() / 2, message_box.y + 20, 11);
+  message_sprite.SetOpacity(0.75);
 }
 
 fun hide_message (text)
