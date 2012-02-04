@@ -1,0 +1,4 @@
+[org/gnome/desktop/background]
+picture-uri='file:///usr/share/plymouth/themes/Rudd-O-Grey/wallpaper.png'
+primary-color='#ffffff'
+secondary-color='#ffffff'

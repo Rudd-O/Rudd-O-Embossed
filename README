@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Presenting a GDM theme for Fedora and other platforms using the Plymouth
+# splash screen manager.
+#
+# For the full effect:
+# 
+# a) drop the file 10-rudd-o-grey-settings into:
+#
+#     /etc/dconf/db/gdm.d
+#
+#    and then run the command dconf update as root
+#
+# b) set wallpaper.png to be your desktop's wallpaper
+# 
+# Alternatively, you can run this command in your shell (it will require
+# sudo privileges) and it will install the plymouth theme for you.
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+echo Installing theme to Plymouth themes directory
+sudo rm -rf /usr/share/plymouth/themes/Rudd-O-Grey/
+sudo cp -R "$DIR" /usr/share/plymouth/themes/Rudd-O-Grey/
+sudo chown root.root -R /usr/share/plymouth/themes/Rudd-O-Grey/
+
+echo "Setting your GNOME wallpaper to this theme's wallpaper"
+dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/plymouth/themes/Rudd-O-Grey/wallpaper.png'"
+
+echo Copying theme-specific GDM display manager settings to /etc
+sudo cp "$DIR"/10-rudd-o-grey-settings /etc/dconf/db/gdm.d/
+
+echo Updating GDM display manager dconf configuration
+sudo dconf update
+
