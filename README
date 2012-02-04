@@ -7,14 +7,14 @@
 # This theme requires the script plugin for Plymouth.  Most distributions
 # come with this plugin already, or have it available on their repositories.
 #
-# Deploy into /usr/share/plymouth/themes as a folder named Rudd-O-Grey,
+# Deploy into /usr/share/plymouth/themes as a folder named Rudd-O-Embossed,
 # then set it as default with:
 #
-#     plymouth-set-default-theme Rudd-O-Grey -R
+#     plymouth-set-default-theme Rudd-O-Embossed -R
 #
 # For the full effect:
 # 
-# a) drop the file 10-rudd-o-grey-settings into:
+# a) drop the file 10-rudd-o-embossed-settings into:
 #
 #       /etc/dconf/db/gdm.d
 #
@@ -41,18 +41,18 @@ done
 set -e
 
 echo Installing theme to Plymouth themes directory
-sudo rm -rf /usr/share/plymouth/themes/Rudd-O-Grey/
-sudo cp -R "$DIR" /usr/share/plymouth/themes/Rudd-O-Grey/
-sudo chown root.root -R /usr/share/plymouth/themes/Rudd-O-Grey/
+sudo rm -rf /usr/share/plymouth/themes/Rudd-O-Embossed/
+sudo cp -R "$DIR" /usr/share/plymouth/themes/Rudd-O-Embossed/
+sudo chown root.root -R /usr/share/plymouth/themes/Rudd-O-Embossed/
 
 echo "Setting theme as default and rebuilding initial RAM disk"
-sudo plymouth-set-default-theme Rudd-O-Grey -R
+sudo plymouth-set-default-theme Rudd-O-Embossed -R
 
 echo "Setting your GNOME wallpaper to the theme wallpaper"
-dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/plymouth/themes/Rudd-O-Grey/wallpaper.png'"
+dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/plymouth/themes/Rudd-O-Embossed/wallpaper.png'"
 
 echo Copying theme-specific GDM display manager settings to /etc
-sudo cp "$DIR"/10-rudd-o-grey-settings /etc/dconf/db/gdm.d/
+sudo cp "$DIR"/10-rudd-o-embossed-settings /etc/dconf/db/gdm.d/
 
 echo Updating GDM display manager dconf configuration
 sudo dconf update

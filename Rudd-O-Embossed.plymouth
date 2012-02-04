@@ -1,0 +1,10 @@
+[Plymouth Theme]
+Name=Rudd-O Embossed
+Description=Rudd-O theme in embossed
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/Rudd-O-Embossed
+ScriptFile=/usr/share/plymouth/themes/Rudd-O-Embossed/script.script
+
+
