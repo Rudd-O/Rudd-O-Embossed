@@ -52,7 +52,7 @@ Plymouth.SetBootProgressFunction (progress_callback);
 
 message_box.image = Image("messagebox.png");
 message_box.x = Window.GetWidth()  / 2 - message_box.image.GetWidth ()/2;
-message_box.y = Window.GetHeight() - 10 - message_box.image.GetHeight ();
+message_box.y = Window.GetHeight() - message_box.image.GetHeight ();
 message_box.sprite = Sprite(message_box.image);
 message_box.sprite.SetOpacity(0);
 message_box.sprite.SetPosition(message_box.x, message_box.y, 10);
