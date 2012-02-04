@@ -64,7 +64,7 @@ message_sprite.SetOpacity(0);
 fun display_message (text)
 {
   message_box.sprite.SetOpacity(1);
-  my_image = Image.Text(text, 1, 1, 1);
+  my_image = Image.Text(text, 0.75, 0.75, 0.75);
   message_sprite.SetImage(my_image);
   message_sprite.SetPosition(Window.GetWidth() / 2 - my_image.GetWidth() / 2, message_box.y + 17, 11);
   message_sprite.SetOpacity(1);
